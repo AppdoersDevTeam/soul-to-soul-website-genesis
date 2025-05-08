@@ -19,7 +19,8 @@ const Section = ({ title, subtitle, className, children, id, bgColor }: SectionP
         "section",
         bgColor === "cream" && "bg-soul-cream",
         bgColor === "white" && "bg-white",
-        bgColor === "leaf" && "bg-soul-leaf/10",
+        bgColor === "blue" && "bg-soul-blue/10",
+        bgColor === "gold" && "bg-soul-gold/10",
         className
       )}
     >

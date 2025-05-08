@@ -24,7 +24,7 @@ const NotFound = () => {
           The page you're looking for doesn't exist or has been moved. Let's get you back on track.
         </p>
         <Link to="/" className="animate-fade-in [animation-delay:600ms]">
-          <Button className="bg-soul-sage hover:bg-soul-sage/90 text-white transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
+          <Button className="bg-soul-blue hover:bg-soul-blue/90 text-soul-gold transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]">
             Return to Home
           </Button>
         </Link>

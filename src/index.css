@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 45 36% 95%;
-    --foreground: 30 5% 33%;
+    --background: 220 20% 95%;
+    --foreground: 220 10% 20%;
 
-    --card: 46 30% 96%;
-    --card-foreground: 30 5% 33%;
+    --card: 220 30% 96%;
+    --card-foreground: 220 10% 20%;
 
-    --popover: 46 30% 96%;
-    --popover-foreground: 30 5% 33%;
+    --popover: 220 30% 96%;
+    --popover-foreground: 220 10% 20%;
 
-    --primary: 100 13% 51%;
-    --primary-foreground: 45 36% 95%;
+    --primary: 220 70% 33%;
+    --primary-foreground: 45 80% 52%;
 
-    --secondary: 80 13% 64%;
-    --secondary-foreground: 30 5% 33%;
+    --secondary: 45 80% 52%;
+    --secondary-foreground: 220 70% 33%;
 
-    --muted: 46 22% 80%;
-    --muted-foreground: 30 5% 45%;
+    --muted: 220 22% 80%;
+    --muted-foreground: 220 10% 40%;
 
-    --accent: 42 41% 81%;
-    --accent-foreground: 30 5% 33%;
+    --accent: 45 80% 70%;
+    --accent-foreground: 220 70% 33%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 45 36% 95%;
+    --destructive-foreground: 220 30% 96%;
 
-    --border: 34 25% 85%;
-    --input: 34 25% 85%;
-    --ring: 100 13% 51%;
+    --border: 220 25% 85%;
+    --input: 220 25% 85%;
+    --ring: 220 70% 33%;
 
     --radius: 0.5rem;
   }
@@ -69,11 +69,11 @@
   }
   
   .btn-primary {
-    @apply bg-soul-sage hover:bg-soul-sage/90 text-white px-6 py-3 rounded-md font-medium transition-all duration-300;
+    @apply bg-soul-blue hover:bg-soul-blue/90 text-soul-gold px-6 py-3 rounded-md font-medium transition-all duration-300;
   }
   
   .btn-secondary {
-    @apply bg-soul-cream hover:bg-soul-sand text-soul-stone px-6 py-3 rounded-md font-medium border border-soul-sand transition-all duration-300;
+    @apply bg-soul-gold hover:bg-soul-lightgold text-soul-blue px-6 py-3 rounded-md font-medium border border-soul-blue transition-all duration-300;
   }
   
   .card-custom {

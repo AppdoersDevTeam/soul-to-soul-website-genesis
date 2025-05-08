@@ -55,11 +55,12 @@ export default {
 				},
 				// Soul to Soul custom colors
 				soul: {
-					sage: "#7C9172",          // Primary brand color - earthy green
-					cream: "#F8F4E3",         // Light background color
-					sand: "#E6D9B8",          // Neutral accent
-					stone: "#5A5853",         // Dark text color
-					leaf: "#A4B494",          // Secondary accent
+					blue: "#1E3A8A",        // Primary blue color
+					lightblue: "#3B82F6",    // Secondary blue color
+					gold: "#D4AF37",        // Primary gold color
+					lightgold: "#F7DC6F",   // Secondary gold color
+					cream: "#F8F4E3",       // Light background color (keeping this)
+					stone: "#5A5853",        // Dark text color (keeping this)
 				},
 			},
 			borderRadius: {
