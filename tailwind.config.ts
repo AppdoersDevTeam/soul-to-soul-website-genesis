@@ -55,10 +55,10 @@ export default {
 				},
 				// Soul to Soul custom colors
 				soul: {
-					blue: "#1E3A8A",        // Primary blue color
-					lightblue: "#3B82F6",    // Secondary blue color
-					gold: "#D4AF37",        // Primary gold color
-					lightgold: "#F7DC6F",   // Secondary gold color
+					blue: "#177b89",        // Teal blue color
+					lightblue: "#3aa7b9",    // Lighter teal blue
+					gold: "#b58234",        // Golden amber color
+					lightgold: "#d6a052",   // Lighter golden amber
 					cream: "#F8F4E3",       // Light background color (keeping this)
 					stone: "#5A5853",        // Dark text color (keeping this)
 				},
