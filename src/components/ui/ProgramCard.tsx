@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -51,12 +50,12 @@ const ProgramCard = ({
         )}
         
         {comingSoon ? (
-          <div className="inline-block bg-soul-sand/30 text-soul-stone px-4 py-2 rounded text-sm font-medium">
+          <div className="inline-block bg-soul-blue text-white px-4 py-2 rounded text-sm font-medium">
             Coming Soon
           </div>
         ) : (
           <Link to="/contact">
-            <Button className="bg-soul-sage hover:bg-soul-sage/90 text-white">
+            <Button className="bg-soul-blue hover:bg-soul-blue-accent text-white">
               Learn More
             </Button>
           </Link>

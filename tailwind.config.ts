@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -55,12 +54,22 @@ export default {
 				},
 				// Soul to Soul custom colors
 				soul: {
-					blue: "#177b89",        // Teal blue color
-					lightblue: "#3aa7b9",    // Lighter teal blue
-					gold: "#b58234",        // Golden amber color
-					lightgold: "#d6a052",   // Lighter golden amber
-					cream: "#F8F4E3",       // Light background color (keeping this)
-					stone: "#5A5853",        // Dark text color (keeping this)
+					blue: {
+						DEFAULT: "#177b89",     // Main teal blue
+						light: "#3aa7b9",       // Light teal blue
+						lighter: "#5bc8d9",     // Even lighter teal
+						dark: "#0d4a54",        // Dark teal
+						accent: "#1a9cb0",      // Bright accent teal
+					},
+					gold: {
+						DEFAULT: "#b58234",     // Main gold
+						light: "#d6a052",       // Light gold
+						lighter: "#e6c17a",     // Even lighter gold
+						dark: "#8c6529",        // Dark gold
+						accent: "#c99b4a",      // Bright accent gold
+					},
+					cream: "#F8F4E3",          // Light background color
+					stone: "#5A5853",          // Dark text color
 				},
 			},
 			borderRadius: {

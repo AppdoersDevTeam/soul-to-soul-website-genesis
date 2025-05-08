@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import PageLayout from "@/components/layout/PageLayout";
 import Hero from "@/components/ui/Hero";
@@ -13,6 +12,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Link } from "react-router-dom";
+import AppdoersCTA from "@/components/layout/AppdoersCTA";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -264,6 +265,29 @@ const Contact = () => {
           </Accordion>
         </div>
       </Section>
+
+      <Section bgColor="cream">
+        <div className="text-center max-w-3xl mx-auto animate-fade-in">
+          <h2 className="font-serif text-3xl mb-6 text-soul-stone">Ready to Connect?</h2>
+          <p className="text-soul-stone/80 text-lg mb-8">
+            We're here to answer your questions and help you take the next step in your journey.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/programs">
+              <Button className="bg-soul-gold hover:bg-soul-gold-accent text-white px-8 transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_0_15px_rgba(234,179,8,0.3)]">
+                Explore Programs
+              </Button>
+            </Link>
+            <Link to="/events">
+              <Button className="bg-soul-blue hover:bg-soul-blue-accent text-white px-8 transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                View Events
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+      <AppdoersCTA />
     </PageLayout>
   );
 };

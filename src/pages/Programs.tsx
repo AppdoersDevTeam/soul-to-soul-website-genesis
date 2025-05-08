@@ -1,8 +1,10 @@
-
 import PageLayout from "@/components/layout/PageLayout";
 import Hero from "@/components/ui/Hero";
 import Section from "@/components/ui/Section";
 import ProgramCard from "@/components/ui/ProgramCard";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import AppdoersCTA from "@/components/layout/AppdoersCTA";
 
 const Programs = () => {
   return (
@@ -179,6 +181,29 @@ const Programs = () => {
           </p>
         </div>
       </Section>
+
+      <Section bgColor="cream">
+        <div className="text-center max-w-3xl mx-auto animate-fade-in">
+          <h2 className="font-serif text-3xl mb-6 text-soul-stone">Find Your Path</h2>
+          <p className="text-soul-stone/80 text-lg mb-8">
+            Ready to begin your transformation? Explore our programs or reach out to schedule a consultation.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/events">
+              <Button className="bg-soul-gold hover:bg-soul-gold-accent text-white px-8 transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_0_15px_rgba(234,179,8,0.3)]">
+                View Events
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button className="bg-soul-blue hover:bg-soul-blue-accent text-white px-8 transform transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] hover:shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                Contact Us
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+      <AppdoersCTA />
     </PageLayout>
   );
 };
