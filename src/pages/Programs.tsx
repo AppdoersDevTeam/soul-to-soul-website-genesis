@@ -14,7 +14,7 @@ const Programs = () => {
       />
       
       <Section bgColor="white">
-        <div className="max-w-3xl mx-auto text-center mb-12">
+        <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-in">
           <h2 className="font-serif text-3xl mb-4 text-soul-stone">Pathways to Transformation</h2>
           <p className="text-soul-stone/80 text-lg">
             Soul to Soul offers a variety of programs designed to meet you where you are on your journey.
@@ -23,106 +23,118 @@ const Programs = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ProgramCard
-            title="Individual Coaching"
-            description="One-on-one personalized coaching sessions tailored to your specific needs and goals."
-            features={[
-              "Personalized guidance and support",
-              "Customized tools and practices",
-              "Flexible scheduling options",
-              "In-person or virtual sessions"
-            ]}
-          />
+          <div className="animate-fade-in [animation-delay:200ms]">
+            <ProgramCard
+              title="Individual Coaching"
+              description="One-on-one personalized coaching sessions tailored to your specific needs and goals."
+              features={[
+                "Personalized guidance and support",
+                "Customized tools and practices",
+                "Flexible scheduling options",
+                "In-person or virtual sessions"
+              ]}
+            />
+          </div>
           
-          <ProgramCard
-            title="Group Workshops"
-            description="Collaborative learning experiences in a supportive community environment."
-            features={[
-              "Themed workshop series",
-              "Experiential learning activities",
-              "Community connection",
-              "Shared wisdom and insights"
-            ]}
-          />
+          <div className="animate-fade-in [animation-delay:300ms]">
+            <ProgramCard
+              title="Group Workshops"
+              description="Collaborative learning experiences in a supportive community environment."
+              features={[
+                "Themed workshop series",
+                "Experiential learning activities",
+                "Community connection",
+                "Shared wisdom and insights"
+              ]}
+            />
+          </div>
           
-          <ProgramCard
-            title="Seasonal Retreats"
-            description="Immersive experiences designed for deep reflection and transformative breakthroughs."
-            features={[
-              "Nature-based settings",
-              "Guided practices and rituals",
-              "Nourishing meals included",
-              "Small, intimate groups"
-            ]}
-          />
+          <div className="animate-fade-in [animation-delay:400ms]">
+            <ProgramCard
+              title="Seasonal Retreats"
+              description="Immersive experiences designed for deep reflection and transformative breakthroughs."
+              features={[
+                "Nature-based settings",
+                "Guided practices and rituals",
+                "Nourishing meals included",
+                "Small, intimate groups"
+              ]}
+            />
+          </div>
           
-          <ProgramCard
-            title="Mindfulness Training"
-            description="Learn and develop practical mindfulness techniques to cultivate presence in daily life."
-            features={[
-              "Progressive skill building",
-              "Daily practice guidance",
-              "Stress reduction techniques",
-              "Integration into daily routines"
-            ]}
-          />
+          <div className="animate-fade-in [animation-delay:500ms]">
+            <ProgramCard
+              title="Mindfulness Training"
+              description="Learn and develop practical mindfulness techniques to cultivate presence in daily life."
+              features={[
+                "Progressive skill building",
+                "Daily practice guidance",
+                "Stress reduction techniques",
+                "Integration into daily routines"
+              ]}
+            />
+          </div>
           
-          <ProgramCard
-            title="Life Transitions Support"
-            description="Specialized coaching for navigating major life changes with grace and clarity."
-            features={[
-              "Emotional processing tools",
-              "Decision-making frameworks",
-              "Identity exploration",
-              "New chapter visioning"
-            ]}
-          />
+          <div className="animate-fade-in [animation-delay:600ms]">
+            <ProgramCard
+              title="Life Transitions Support"
+              description="Specialized coaching for navigating major life changes with grace and clarity."
+              features={[
+                "Emotional processing tools",
+                "Decision-making frameworks",
+                "Identity exploration",
+                "New chapter visioning"
+              ]}
+            />
+          </div>
           
-          <ProgramCard
-            title="Couples Integration"
-            description="Support for couples seeking deeper connection and alignment in their relationship."
-            features={[
-              "Communication enhancement",
-              "Conflict resolution tools",
-              "Shared vision development",
-              "Intimacy cultivation practices"
-            ]}
-            comingSoon={true}
-          />
+          <div className="animate-fade-in [animation-delay:700ms]">
+            <ProgramCard
+              title="Couples Integration"
+              description="Support for couples seeking deeper connection and alignment in their relationship."
+              features={[
+                "Communication enhancement",
+                "Conflict resolution tools",
+                "Shared vision development",
+                "Intimacy cultivation practices"
+              ]}
+              comingSoon={true}
+            />
+          </div>
         </div>
       </Section>
       
       <Section bgColor="cream">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-3xl mb-6 text-soul-stone text-center">Our Methodology</h2>
-          <p className="text-soul-stone/80 text-lg mb-6">
+          <h2 className="font-serif text-3xl mb-6 text-soul-stone text-center animate-fade-in">Our Methodology</h2>
+          <p className="text-soul-stone/80 text-lg mb-6 animate-fade-in [animation-delay:200ms]">
             At Soul to Soul Integrative Coaching, we combine various evidence-based approaches with traditional wisdom practices.
             Our methodology draws from:
           </p>
           
           <div className="grid sm:grid-cols-2 gap-6 mb-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-white p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] animate-fade-in [animation-delay:300ms]">
               <h3 className="text-xl font-serif mb-3 text-soul-sage">Contemporary Coaching</h3>
               <ul className="space-y-2 text-soul-stone/80">
-                <li className="flex items-start">
+                <li className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                   <svg className="h-5 w-5 text-soul-sage mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span>Positive Psychology</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                   <svg className="h-5 w-5 text-soul-sage mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span>Somatic Awareness</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                   <svg className="h-5 w-5 text-soul-sage mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span>Cognitive Behavioral Techniques</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                   <svg className="h-5 w-5 text-soul-sage mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -131,28 +143,28 @@ const Programs = () => {
               </ul>
             </div>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-white p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] animate-fade-in [animation-delay:500ms]">
               <h3 className="text-xl font-serif mb-3 text-soul-sage">Traditional Wisdom</h3>
               <ul className="space-y-2 text-soul-stone/80">
-                <li className="flex items-start">
+                <li className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                   <svg className="h-5 w-5 text-soul-sage mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span>Mindfulness Practices</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                   <svg className="h-5 w-5 text-soul-sage mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span>Breathwork</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                   <svg className="h-5 w-5 text-soul-sage mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span>Nature Connection</span>
                 </li>
-                <li className="flex items-start">
+                <li className="flex items-start transform transition-all duration-300 hover:translate-x-1">
                   <svg className="h-5 w-5 text-soul-sage mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
@@ -162,7 +174,7 @@ const Programs = () => {
             </div>
           </div>
           
-          <p className="text-soul-stone/80 text-lg text-center">
+          <p className="text-soul-stone/80 text-lg text-center animate-fade-in [animation-delay:700ms]">
             We adapt and integrate these approaches based on your individual needs and preferences, creating a holistic framework for growth and transformation.
           </p>
         </div>
