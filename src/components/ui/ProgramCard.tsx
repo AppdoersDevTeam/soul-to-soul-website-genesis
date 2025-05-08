@@ -9,6 +9,7 @@ interface ProgramCardProps {
   imageUrl?: string;
   comingSoon?: boolean;
   className?: string;
+  onLearnMore?: () => void;
 }
 
 const ProgramCard = ({
@@ -18,6 +19,7 @@ const ProgramCard = ({
   imageUrl,
   comingSoon = false,
   className,
+  onLearnMore,
 }: ProgramCardProps) => {
   return (
     <div className={cn("overflow-hidden rounded-lg border border-soul-cream bg-white shadow-md transition-all hover:shadow-lg", className)}>
@@ -54,11 +56,17 @@ const ProgramCard = ({
             Coming Soon
           </div>
         ) : (
-          <Link to="/contact">
-            <Button className="bg-soul-blue hover:bg-soul-blue-accent text-white">
+          onLearnMore ? (
+            <Button className="bg-soul-blue hover:bg-soul-blue-accent text-white" onClick={onLearnMore}>
               Learn More
             </Button>
-          </Link>
+          ) : (
+            <Link to="/contact">
+              <Button className="bg-soul-blue hover:bg-soul-blue-accent text-white">
+                Learn More
+              </Button>
+            </Link>
+          )
         )}
       </div>
     </div>

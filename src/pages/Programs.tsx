@@ -5,8 +5,21 @@ import ProgramCard from "@/components/ui/ProgramCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import AppdoersCTA from "@/components/layout/AppdoersCTA";
+import { motion } from "framer-motion";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { useState } from "react";
 
 const Programs = () => {
+  // Modal state
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+  const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
+
+  // Handler for Learn More
+  const handleLearnMore = (programTitle: string) => {
+    setSelectedProgram(programTitle);
+    setShowUpgradeModal(true);
+  };
+
   return (
     <PageLayout>
       <Hero
@@ -25,7 +38,13 @@ const Programs = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="animate-fade-in [animation-delay:200ms]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="animate-fade-in hover-lift"
+          >
             <ProgramCard
               title="Individual Coaching"
               description="One-on-one personalized coaching sessions tailored to your specific needs and goals."
@@ -35,10 +54,17 @@ const Programs = () => {
                 "Flexible scheduling options",
                 "In-person or virtual sessions"
               ]}
+              onLearnMore={() => handleLearnMore("Individual Coaching")}
             />
-          </div>
+          </motion.div>
           
-          <div className="animate-fade-in [animation-delay:300ms]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="animate-fade-in hover-lift"
+          >
             <ProgramCard
               title="Group Workshops"
               description="Collaborative learning experiences in a supportive community environment."
@@ -48,10 +74,17 @@ const Programs = () => {
                 "Community connection",
                 "Shared wisdom and insights"
               ]}
+              onLearnMore={() => handleLearnMore("Group Workshops")}
             />
-          </div>
+          </motion.div>
           
-          <div className="animate-fade-in [animation-delay:400ms]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="animate-fade-in hover-lift"
+          >
             <ProgramCard
               title="Seasonal Retreats"
               description="Immersive experiences designed for deep reflection and transformative breakthroughs."
@@ -61,10 +94,17 @@ const Programs = () => {
                 "Nourishing meals included",
                 "Small, intimate groups"
               ]}
+              onLearnMore={() => handleLearnMore("Seasonal Retreats")}
             />
-          </div>
+          </motion.div>
           
-          <div className="animate-fade-in [animation-delay:500ms]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="animate-fade-in hover-lift"
+          >
             <ProgramCard
               title="Mindfulness Training"
               description="Learn and develop practical mindfulness techniques to cultivate presence in daily life."
@@ -74,10 +114,17 @@ const Programs = () => {
                 "Stress reduction techniques",
                 "Integration into daily routines"
               ]}
+              onLearnMore={() => handleLearnMore("Mindfulness Training")}
             />
-          </div>
+          </motion.div>
           
-          <div className="animate-fade-in [animation-delay:600ms]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="animate-fade-in hover-lift"
+          >
             <ProgramCard
               title="Life Transitions Support"
               description="Specialized coaching for navigating major life changes with grace and clarity."
@@ -87,10 +134,17 @@ const Programs = () => {
                 "Identity exploration",
                 "New chapter visioning"
               ]}
+              onLearnMore={() => handleLearnMore("Life Transitions Support")}
             />
-          </div>
+          </motion.div>
           
-          <div className="animate-fade-in [animation-delay:700ms]">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="animate-fade-in hover-lift"
+          >
             <ProgramCard
               title="Couples Integration"
               description="Support for couples seeking deeper connection and alignment in their relationship."
@@ -102,20 +156,35 @@ const Programs = () => {
               ]}
               comingSoon={true}
             />
-          </div>
+          </motion.div>
         </div>
       </Section>
       
       <Section bgColor="cream">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-3xl mb-6 text-soul-stone text-center animate-fade-in">Our Methodology</h2>
-          <p className="text-soul-stone/80 text-lg mb-6 animate-fade-in [animation-delay:200ms]">
-            At Soul to Soul Integrative Coaching, we combine various evidence-based approaches with traditional wisdom practices.
-            Our methodology draws from:
-          </p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-serif text-3xl mb-6 text-soul-stone text-center animate-fade-in"
+          >Our Methodology</motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-soul-stone/80 text-lg mb-6 animate-fade-in"
+          >At Soul to Soul Integrative Coaching, we combine various evidence-based approaches with traditional wisdom practices. Our methodology draws from:</motion.p>
           
           <div className="grid sm:grid-cols-2 gap-6 mb-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] animate-fade-in [animation-delay:300ms]">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] animate-fade-in hover-lift"
+            >
               <h3 className="text-xl font-serif mb-3 text-soul-sage">Contemporary Coaching</h3>
               <ul className="space-y-2 text-soul-stone/80">
                 <li className="flex items-start transform transition-all duration-300 hover:translate-x-1">
@@ -143,9 +212,15 @@ const Programs = () => {
                   <span>Narrative Coaching</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
             
-            <div className="bg-white p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] animate-fade-in [animation-delay:500ms]">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="bg-white p-6 rounded-lg shadow-sm transform transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] animate-fade-in hover-lift"
+            >
               <h3 className="text-xl font-serif mb-3 text-soul-sage">Traditional Wisdom</h3>
               <ul className="space-y-2 text-soul-stone/80">
                 <li className="flex items-start transform transition-all duration-300 hover:translate-x-1">
@@ -173,17 +248,27 @@ const Programs = () => {
                   <span>Ritual and Ceremony</span>
                 </li>
               </ul>
-            </div>
+            </motion.div>
           </div>
           
-          <p className="text-soul-stone/80 text-lg text-center animate-fade-in [animation-delay:700ms]">
-            We adapt and integrate these approaches based on your individual needs and preferences, creating a holistic framework for growth and transformation.
-          </p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="text-soul-stone/80 text-lg text-center animate-fade-in"
+          >We adapt and integrate these approaches based on your individual needs and preferences, creating a holistic framework for growth and transformation.</motion.p>
         </div>
       </Section>
 
       <Section bgColor="cream">
-        <div className="text-center max-w-3xl mx-auto animate-fade-in">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto animate-fade-in"
+        >
           <h2 className="font-serif text-3xl mb-6 text-soul-stone">Find Your Path</h2>
           <p className="text-soul-stone/80 text-lg mb-8">
             Ready to begin your transformation? Explore our programs or reach out to schedule a consultation.
@@ -200,8 +285,52 @@ const Programs = () => {
               </Button>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </Section>
+
+      {/* Intermediate Plan Modal */}
+      <Dialog open={showUpgradeModal} onOpenChange={setShowUpgradeModal}>
+        <DialogContent className="max-w-md mx-auto rounded-xl p-8 bg-white shadow-xl animate-fade-in">
+          <div className="space-y-4 text-center">
+            <h2 className="text-2xl font-bold text-soul-blue">Intermediate Plan Required</h2>
+            <div className="bg-soul-cream/60 rounded-lg p-4">
+              <p className="text-soul-stone/90 text-base mb-2">
+                Access to this program is only available to members on the <span className="font-semibold text-soul-gold">Intermediate Plan</span>.
+              </p>
+              {selectedProgram && (
+                <p className="text-soul-stone/80 text-sm mb-2">
+                  Program: <span className="font-semibold">{selectedProgram}</span>
+                </p>
+              )}
+              <p className="text-soul-stone/70 text-sm">
+                To upgrade your plan and unlock this program, please contact us:
+              </p>
+              <a
+                href="mailto:info@appdoers.com?subject=Upgrade%20to%20Intermediate%20Plan"
+                className="block mt-2 text-soul-blue underline font-medium"
+              >
+                info@appdoers.com
+              </a>
+            </div>
+            <div className="flex gap-4 justify-center mt-6">
+              <button
+                className="px-6 py-2 rounded-lg bg-soul-gold text-white font-semibold shadow hover:bg-soul-gold-accent transition"
+                onClick={() => {
+                  window.open('mailto:info@appdoers.com?subject=Upgrade%20to%20Intermediate%20Plan', '_blank');
+                }}
+              >
+                Contact to Upgrade
+              </button>
+              <button
+                className="px-6 py-2 rounded-lg bg-soul-stone/10 text-soul-stone font-semibold hover:bg-soul-stone/20 transition"
+                onClick={() => setShowUpgradeModal(false)}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <AppdoersCTA />
     </PageLayout>

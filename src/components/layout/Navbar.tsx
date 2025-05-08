@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [aboutDropdown, setAboutDropdown] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -22,10 +23,7 @@ const Navbar = () => {
 
   const navLinks = [
     { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/programs", label: "Programs" },
     { to: "/events", label: "Events" },
-    { to: "/testimonials", label: "Success Stories" },
     { to: "/ebooks", label: "eBooks" },
     { to: "/contact", label: "Contact" },
   ];
@@ -80,6 +78,45 @@ const Navbar = () => {
               </Link>
             </motion.div>
           ))}
+          {/* About Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setAboutDropdown(true)}
+            onMouseLeave={() => setAboutDropdown(false)}
+            onFocus={() => setAboutDropdown(true)}
+            onBlur={() => setAboutDropdown(false)}
+            tabIndex={0}
+          >
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                to="/about"
+                className={`relative px-2 py-1 ${
+                  scrolled 
+                    ? "text-white hover:text-soul-gold-light" 
+                    : "text-soul-stone hover:text-soul-blue"
+                } transition-colors flex items-center gap-1`}
+              >
+                About
+                <svg className="h-4 w-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              </Link>
+            </motion.div>
+            <AnimatePresence>
+              {aboutDropdown && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50 border border-soul-cream"
+                >
+                  <Link to="/about" className="block px-4 py-2 text-soul-stone hover:bg-soul-blue/10 hover:text-soul-blue transition-colors">About</Link>
+                  <Link to="/testimonials" className="block px-4 py-2 text-soul-stone hover:bg-soul-blue/10 hover:text-soul-blue transition-colors">Success Stories</Link>
+                  <Link to="/programs" className="block px-4 py-2 text-soul-stone hover:bg-soul-blue/10 hover:text-soul-blue transition-colors">Programs</Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          {/* End About Dropdown */}
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link to="/signin">
               <Button className={`${

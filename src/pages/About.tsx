@@ -4,6 +4,7 @@ import Section from "@/components/ui/Section";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import AppdoersCTA from "@/components/layout/AppdoersCTA";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -33,7 +34,13 @@ const About = () => {
       
       <Section bgColor="cream">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-in [animation-delay:200ms]">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="animate-fade-in"
+          >
             <h2 className="font-serif text-3xl mb-6 text-soul-stone">Our Approach</h2>
             <p className="text-soul-stone/80 mb-4">
               At Soul to Soul, we believe in a holistic approach that addresses all aspects of your being:
@@ -81,48 +88,65 @@ const About = () => {
                 </span>
               </li>
             </ul>
-          </div>
+          </motion.div>
           
-          <div className="rounded-lg overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-[1.02] animate-fade-in [animation-delay:400ms]">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="rounded-lg overflow-hidden shadow-lg transform transition-all duration-500 hover:scale-[1.02] animate-fade-in [animation-delay:400ms] hover-lift"
+          >
             <img 
               src="https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
               alt="Peaceful natural setting" 
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
       </Section>
       
       <Section bgColor="white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-serif text-3xl mb-6 text-soul-stone text-center animate-fade-in">Our Values</h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="font-serif text-3xl mb-6 text-soul-stone text-center animate-fade-in"
+          >Our Values</motion.h2>
           
           <div className="grid sm:grid-cols-2 gap-6 mb-12">
-            <div className="border border-soul-cream rounded-lg p-6 bg-white shadow-sm transform transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] animate-fade-in [animation-delay:200ms]">
-              <h3 className="text-xl font-serif mb-3 text-soul-sage">Authenticity</h3>
-              <p className="text-soul-stone/80">We believe in honoring your true self and creating space for genuine expression and growth.</p>
-            </div>
-            
-            <div className="border border-soul-cream rounded-lg p-6 bg-white shadow-sm transform transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] animate-fade-in [animation-delay:400ms]">
-              <h3 className="text-xl font-serif mb-3 text-soul-sage">Integration</h3>
-              <p className="text-soul-stone/80">We support the harmonious alignment of all aspects of your being: mind, body, and spirit.</p>
-            </div>
-            
-            <div className="border border-soul-cream rounded-lg p-6 bg-white shadow-sm transform transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] animate-fade-in [animation-delay:600ms]">
-              <h3 className="text-xl font-serif mb-3 text-soul-sage">Compassion</h3>
-              <p className="text-soul-stone/80">We approach all interactions with kindness, understanding, and deep respect for your journey.</p>
-            </div>
-            
-            <div className="border border-soul-cream rounded-lg p-6 bg-white shadow-sm transform transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] animate-fade-in [animation-delay:800ms]">
-              <h3 className="text-xl font-serif mb-3 text-soul-sage">Transformation</h3>
-              <p className="text-soul-stone/80">We believe in your capacity for positive change and growth throughout your life's journey.</p>
-            </div>
+            {["Authenticity", "Integration", "Compassion", "Transformation"].map((value, idx) => (
+              <motion.div
+                key={value}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 + idx * 0.2 }}
+                className="border border-soul-cream rounded-lg p-6 bg-white shadow-sm transform transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] animate-fade-in hover-lift"
+              >
+                <h3 className="text-xl font-serif mb-3 text-soul-sage">{value}</h3>
+                <p className="text-soul-stone/80">
+                  {value === "Authenticity" && "We believe in honoring your true self and creating space for genuine expression and growth."}
+                  {value === "Integration" && "We support the harmonious alignment of all aspects of your being: mind, body, and spirit."}
+                  {value === "Compassion" && "We approach all interactions with kindness, understanding, and deep respect for your journey."}
+                  {value === "Transformation" && "We believe in your capacity for positive change and growth throughout your life's journey."}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </Section>
       
       <Section bgColor="cream">
-        <div className="text-center max-w-3xl mx-auto animate-fade-in">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto animate-fade-in"
+        >
           <h2 className="font-serif text-3xl mb-6 text-soul-stone">Ready to Begin Your Journey?</h2>
           <p className="text-soul-stone/80 text-lg mb-8">
             We invite you to take the first step towards transformation. Explore our programs or reach out to schedule a consultation.
@@ -139,7 +163,7 @@ const About = () => {
               </Button>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </Section>
 
       <AppdoersCTA />

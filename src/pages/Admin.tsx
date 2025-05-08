@@ -1369,8 +1369,8 @@ const Admin = () => {
                     <div className="text-lg font-serif text-soul-blue mb-2">Playfair Display, Inter</div>
                     <div className="text-soul-stone/70">Font</div>
                   </div>
-                  <div className="bg-white rounded-lg shadow p-6 text-center">
-                    <div className="text-soul-blue font-medium mb-2">info@soul2soulcoaching.com</div>
+                  <div className="bg-white rounded-lg shadow p-6 text-center flex flex-col items-center justify-center">
+                    <div className="text-soul-blue font-medium mb-2 break-all">info@soul2soulcoaching.com</div>
                     <div className="text-soul-stone/70">Contact Email</div>
                   </div>
                 </div>
