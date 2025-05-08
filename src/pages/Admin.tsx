@@ -449,7 +449,7 @@ const Admin = () => {
                     <div className="border border-soul-cream rounded-lg overflow-hidden">
                       <div className="h-40 bg-soul-blue/5 relative">
                         <img 
-                          src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=800&h=600&fit=crop" 
+                          src="https://images.unsplash.com/photo-1518241353398-675f0ddb6308?w=800&h=600&fit=crop" 
                           alt="Meditation Guide" 
                           className="w-full h-full object-cover"
                         />
@@ -1038,12 +1038,145 @@ const Admin = () => {
               <div>
                 <div className="flex flex-wrap gap-2 mb-2"><PlanBadge plan="Optional" /></div>
                 <h1 className="font-serif text-3xl mb-6 gradient-text">Blog Management</h1>
-                <div className="bg-white rounded-lg shadow p-6 mb-6">
-                  <Button className="mb-4 bg-soul-blue text-white">Add Blog Post</Button>
-                  <ul className="list-disc ml-6 text-soul-stone/80">
-                    <li>How to Start Mindful Living</li>
-                    <li>Benefits of Group Coaching</li>
-                  </ul>
+
+                {/* Blog Analytics Summary */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                  <div className="bg-white rounded-lg shadow p-6 text-center">
+                    <div className="text-2xl font-bold text-soul-blue">18</div>
+                    <div className="text-soul-stone/70">Total Posts</div>
+                  </div>
+                  <div className="bg-white rounded-lg shadow p-6 text-center">
+                    <div className="text-2xl font-bold text-soul-blue">12</div>
+                    <div className="text-soul-stone/70">Published</div>
+                  </div>
+                  <div className="bg-white rounded-lg shadow p-6 text-center">
+                    <div className="text-2xl font-bold text-soul-blue">6</div>
+                    <div className="text-soul-stone/70">Drafts</div>
+                  </div>
+                  <div className="bg-white rounded-lg shadow p-6 text-center">
+                    <div className="text-2xl font-bold text-soul-blue">4,200</div>
+                    <div className="text-soul-stone/70">Total Views</div>
+                  </div>
+                </div>
+
+                {/* Featured Post */}
+                <div className="bg-gradient-to-r from-soul-blue/10 to-soul-gold/10 rounded-lg shadow p-6 mb-8 flex flex-col md:flex-row gap-6 items-center">
+                  <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?w=400&h=250&fit=crop" alt="Featured Post" className="w-full md:w-64 h-40 object-cover rounded-lg" />
+                  <div className="flex-1">
+                    <h2 className="font-serif text-2xl mb-2 text-soul-blue">Featured: The Power of Mindful Living</h2>
+                    <p className="text-soul-stone/80 mb-2">Discover how mindfulness can transform your daily life and bring clarity, peace, and purpose.</p>
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      <span className="bg-soul-blue/10 text-soul-blue px-2 py-1 rounded text-sm">Mindfulness</span>
+                      <span className="bg-soul-gold/10 text-soul-gold px-2 py-1 rounded text-sm">Wellness</span>
+                    </div>
+                    <div className="text-xs text-soul-stone/60 mb-2">By Jane Doe • June 10, 2024</div>
+                    <Button size="sm" className="bg-soul-blue text-white">View Post</Button>
+                  </div>
+                </div>
+
+                {/* Recent Blog Posts Table */}
+                <div className="bg-white rounded-lg shadow p-6 mb-8">
+                  <div className="flex justify-between items-center mb-6">
+                    <h2 className="font-serif text-xl text-soul-blue">Recent Blog Posts</h2>
+                    <Button className="bg-soul-blue text-white">Add Blog Post</Button>
+                  </div>
+                  <table className="w-full text-left mb-4">
+                    <thead>
+                      <tr className="text-soul-stone/70">
+                        <th className="py-2">Title</th>
+                        <th>Status</th>
+                        <th>Author</th>
+                        <th>Date</th>
+                        <th>Views</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>How to Start Mindful Living</td>
+                        <td><span className="inline-block px-2 py-1 rounded bg-green-100 text-green-700 text-xs">Published</span></td>
+                        <td>Jane Doe</td>
+                        <td>2024-06-01</td>
+                        <td>1,200</td>
+                        <td><Button size="sm" className="bg-soul-blue text-white">Edit</Button></td>
+                      </tr>
+                      <tr>
+                        <td>Benefits of Group Coaching</td>
+                        <td><span className="inline-block px-2 py-1 rounded bg-yellow-100 text-yellow-700 text-xs">Draft</span></td>
+                        <td>Michael Lee</td>
+                        <td>2024-05-28</td>
+                        <td>800</td>
+                        <td><Button size="sm" className="bg-soul-blue text-white">Edit</Button></td>
+                      </tr>
+                      <tr>
+                        <td>Integrating Mind, Body, and Spirit</td>
+                        <td><span className="inline-block px-2 py-1 rounded bg-green-100 text-green-700 text-xs">Published</span></td>
+                        <td>Sarah Wilson</td>
+                        <td>2024-05-20</td>
+                        <td>950</td>
+                        <td><Button size="sm" className="bg-soul-blue text-white">Edit</Button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Create New Blog Post Section */}
+                <div className="bg-white rounded-lg shadow p-6">
+                  <h2 className="font-serif text-xl mb-6 text-soul-blue">Create New Blog Post</h2>
+                  <form className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Title</label>
+                        <input 
+                          type="text" 
+                          className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20"
+                          placeholder="Enter post title"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Tags</label>
+                        <input 
+                          type="text" 
+                          className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20"
+                          placeholder="e.g. Mindfulness, Wellness"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-soul-stone mb-1">Content</label>
+                      <textarea 
+                        className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20 h-32"
+                        placeholder="Write your blog content here..."
+                      />
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Status</label>
+                        <select className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20">
+                          <option value="draft">Draft</option>
+                          <option value="published">Published</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Cover Image</label>
+                        <div className="border-2 border-dashed border-soul-cream rounded-lg p-6 text-center">
+                          <div className="mb-2">
+                            <svg className="mx-auto h-12 w-12 text-soul-stone/40" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                              <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          </div>
+                          <div className="text-sm text-soul-stone/60 mb-2">
+                            Upload a cover image (recommended size: 800x600)
+                          </div>
+                          <Button variant="outline" className="border-soul-cream">Browse Images</Button>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex justify-end gap-3">
+                      <Button variant="outline" className="border-soul-cream">Save as Draft</Button>
+                      <Button className="bg-soul-blue text-white">Publish Post</Button>
+                    </div>
+                  </form>
                 </div>
               </div>
             )}
@@ -1051,8 +1184,9 @@ const Admin = () => {
               <div>
                 <div className="flex flex-wrap gap-2 mb-2"><PlanBadge plan="Advanced" /></div>
                 <h1 className="font-serif text-3xl mb-6 gradient-text">Payments & Transactions</h1>
+
                 {/* Analytics Summary */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                   <div className="bg-white rounded-lg shadow p-6 text-center">
                     <div className="text-2xl font-bold text-soul-blue">$2,500</div>
                     <div className="text-soul-stone/70">Total Revenue</div>
@@ -1063,13 +1197,40 @@ const Admin = () => {
                   </div>
                   <div className="bg-white rounded-lg shadow p-6 text-center">
                     <div className="text-2xl font-bold text-soul-blue">Mindful Living</div>
-                    <div className="text-soul-stone/70">Top Selling Product</div>
+                    <div className="text-soul-stone/70">Top Product</div>
+                  </div>
+                  <div className="bg-white rounded-lg shadow p-6 text-center">
+                    <div className="text-2xl font-bold text-soul-blue">37</div>
+                    <div className="text-soul-stone/70">Total Transactions</div>
                   </div>
                 </div>
-                {/* Searchable Payments Table */}
-                <div className="bg-white rounded-lg shadow p-6 mb-6">
-                  <input className="border border-soul-cream rounded px-4 py-2 w-full mb-4" placeholder="Search payments by user, product, or status..." />
-                  <table className="w-full text-left">
+
+                {/* Featured Transaction */}
+                <div className="bg-gradient-to-r from-soul-blue/10 to-soul-gold/10 rounded-lg shadow p-6 mb-8 flex flex-col md:flex-row gap-6 items-center">
+                  <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400&h=250&fit=crop" alt="User" className="w-full md:w-40 h-32 object-cover rounded-lg" />
+                  <div className="flex-1">
+                    <h2 className="font-serif text-2xl mb-2 text-soul-blue">Featured Transaction</h2>
+                    <p className="text-soul-stone/80 mb-2">Jane Doe purchased <span className='font-semibold text-soul-blue'>Mindful Living</span> for <span className='font-semibold'>$49</span> on June 10, 2024.</p>
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      <span className="bg-soul-blue/10 text-soul-blue px-2 py-1 rounded text-sm">Paid</span>
+                      <span className="bg-soul-gold/10 text-soul-gold px-2 py-1 rounded text-sm">Credit Card</span>
+                    </div>
+                    <div className="text-xs text-soul-stone/60 mb-2">Transaction ID: #TXN123456</div>
+                    <Button size="sm" className="bg-soul-blue text-white">View Details</Button>
+                  </div>
+                </div>
+
+                {/* Payments Table */}
+                <div className="bg-white rounded-lg shadow p-6 mb-8">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                    <h2 className="font-serif text-xl text-soul-blue">Recent Payments</h2>
+                    <div className="flex gap-2">
+                      <input className="border border-soul-cream rounded px-4 py-2" placeholder="Search payments..." />
+                      <Button variant="outline" className="border-soul-cream">Filter</Button>
+                      <Button variant="outline" className="border-soul-cream">Export</Button>
+                    </div>
+                  </div>
+                  <table className="w-full text-left mb-4">
                     <thead>
                       <tr className="text-soul-stone/70">
                         <th className="py-2">User</th>
@@ -1077,6 +1238,8 @@ const Admin = () => {
                         <th>Amount</th>
                         <th>Status</th>
                         <th>Date</th>
+                        <th>Method</th>
+                        <th>Transaction ID</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
@@ -1087,7 +1250,12 @@ const Admin = () => {
                         <td>$49</td>
                         <td><span className="inline-block px-2 py-1 rounded bg-green-100 text-green-700 text-xs">Paid</span></td>
                         <td>2024-06-10</td>
-                        <td><Button size="sm" className="bg-soul-blue text-white">View</Button></td>
+                        <td>Credit Card</td>
+                        <td>#TXN123456</td>
+                        <td>
+                          <Button size="sm" className="bg-soul-blue text-white">View</Button>
+                          <Button size="sm" variant="outline" className="border-soul-cream ml-2">Refund</Button>
+                        </td>
                       </tr>
                       <tr>
                         <td>Michael Lee</td>
@@ -1095,7 +1263,11 @@ const Admin = () => {
                         <td>$39</td>
                         <td><span className="inline-block px-2 py-1 rounded bg-red-100 text-red-700 text-xs">Refunded</span></td>
                         <td>2024-06-08</td>
-                        <td><Button size="sm" className="bg-soul-blue text-white">View</Button></td>
+                        <td>PayPal</td>
+                        <td>#TXN123457</td>
+                        <td>
+                          <Button size="sm" className="bg-soul-blue text-white">View</Button>
+                        </td>
                       </tr>
                       <tr>
                         <td>Emily Rose</td>
@@ -1103,11 +1275,78 @@ const Admin = () => {
                         <td>$49</td>
                         <td><span className="inline-block px-2 py-1 rounded bg-green-100 text-green-700 text-xs">Paid</span></td>
                         <td>2024-06-07</td>
-                        <td><Button size="sm" className="bg-soul-blue text-white">View</Button></td>
+                        <td>Stripe</td>
+                        <td>#TXN123458</td>
+                        <td>
+                          <Button size="sm" className="bg-soul-blue text-white">View</Button>
+                          <Button size="sm" variant="outline" className="border-soul-cream ml-2">Refund</Button>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
-                  <Button className="mt-4 bg-soul-gold text-white">View Stripe Dashboard</Button>
+                </div>
+
+                {/* Manual Payment / Refund Form */}
+                <div className="bg-white rounded-lg shadow p-6">
+                  <h2 className="font-serif text-xl mb-6 text-soul-blue">Manual Payment / Issue Refund</h2>
+                  <form className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">User</label>
+                        <input 
+                          type="text" 
+                          className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20"
+                          placeholder="Enter user name"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Product</label>
+                        <input 
+                          type="text" 
+                          className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20"
+                          placeholder="Enter product name"
+                        />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Amount ($)</label>
+                        <input 
+                          type="number" 
+                          className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20"
+                          placeholder="0.00"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Transaction Type</label>
+                        <select className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20">
+                          <option value="payment">Payment</option>
+                          <option value="refund">Refund</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Payment Method</label>
+                        <select className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20">
+                          <option value="credit">Credit Card</option>
+                          <option value="paypal">PayPal</option>
+                          <option value="stripe">Stripe</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Date</label>
+                        <input 
+                          type="date" 
+                          className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex justify-end gap-3">
+                      <Button variant="outline" className="border-soul-cream">Cancel</Button>
+                      <Button className="bg-soul-blue text-white">Submit</Button>
+                    </div>
+                  </form>
                 </div>
               </div>
             )}
@@ -1115,13 +1354,99 @@ const Admin = () => {
               <div>
                 <div className="flex flex-wrap gap-2 mb-2"><PlanBadge plan="Advanced" /></div>
                 <h1 className="font-serif text-3xl mb-6 gradient-text">Site Settings</h1>
-                <div className="bg-white rounded-lg shadow p-6 mb-6">
-                  <Button className="mb-4 bg-soul-blue text-white">Upload Logo</Button>
-                  <div className="text-soul-stone/80 mb-2">Primary Color: <span className="inline-block w-4 h-4 bg-soul-blue rounded-full align-middle ml-1"></span></div>
-                  <div className="text-soul-stone/80 mb-2">Font: Playfair Display, Inter</div>
-                  <div className="text-soul-stone/80 mb-2">Contact Email: info@soul2soulcoaching.com</div>
-                  <div className="text-soul-stone/80 mb-2">Social: @soul2soul</div>
-                  <Button className="mt-4 bg-soul-gold text-white">Save Changes</Button>
+
+                {/* Settings Summary */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                  <div className="bg-white rounded-lg shadow p-6 text-center flex flex-col items-center">
+                    <img src="/favicon.png" alt="Logo" className="h-12 w-12 mb-2 rounded-full border border-soul-cream" />
+                    <div className="text-soul-stone/70">Current Logo</div>
+                  </div>
+                  <div className="bg-white rounded-lg shadow p-6 text-center">
+                    <div className="inline-block w-6 h-6 bg-soul-blue rounded-full align-middle mb-2"></div>
+                    <div className="text-soul-stone/70">Primary Color</div>
+                  </div>
+                  <div className="bg-white rounded-lg shadow p-6 text-center">
+                    <div className="text-lg font-serif text-soul-blue mb-2">Playfair Display, Inter</div>
+                    <div className="text-soul-stone/70">Font</div>
+                  </div>
+                  <div className="bg-white rounded-lg shadow p-6 text-center">
+                    <div className="text-soul-blue font-medium mb-2">info@soul2soulcoaching.com</div>
+                    <div className="text-soul-stone/70">Contact Email</div>
+                  </div>
+                </div>
+
+                {/* Site Details Form */}
+                <div className="bg-white rounded-lg shadow p-6 mb-8">
+                  <h2 className="font-serif text-xl mb-6 text-soul-blue">Update Site Details</h2>
+                  <form className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Logo</label>
+                        <div className="flex items-center gap-4">
+                          <img src="/favicon.png" alt="Logo" className="h-10 w-10 rounded-full border border-soul-cream" />
+                          <Button variant="outline" className="border-soul-cream">Upload Logo</Button>
+                        </div>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Primary Color</label>
+                        <input type="color" className="w-12 h-12 p-0 border-0 bg-transparent" value="#2563eb" readOnly />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Font</label>
+                        <select className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20">
+                          <option value="playfair">Playfair Display, Inter</option>
+                          <option value="inter">Inter</option>
+                          <option value="serif">Serif</option>
+                          <option value="sans">Sans-serif</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Contact Email</label>
+                        <input type="email" className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20" value="info@soul2soulcoaching.com" readOnly />
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Instagram</label>
+                        <input type="text" className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20" value="@soul2soul" readOnly />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-soul-stone mb-1">Facebook</label>
+                        <input type="text" className="w-full border border-soul-cream rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-soul-blue/20" value="/soul2soulcoaching" readOnly />
+                      </div>
+                    </div>
+                    <div className="flex justify-end gap-3">
+                      <Button variant="outline" className="border-soul-cream">Cancel</Button>
+                      <Button className="bg-soul-blue text-white">Save Changes</Button>
+                    </div>
+                  </form>
+                </div>
+
+                {/* Integrations Section */}
+                <div className="bg-white rounded-lg shadow p-6">
+                  <h2 className="font-serif text-xl mb-6 text-soul-blue">Integrations</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="border border-soul-cream rounded-lg p-4 flex flex-col items-center">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Stripe_Logo%2C_revised_2016.png" alt="Stripe" className="h-8 mb-2" />
+                      <div className="font-medium mb-1">Stripe</div>
+                      <div className="text-xs text-soul-stone/60 mb-2">Connected</div>
+                      <Button size="sm" variant="outline" className="border-soul-cream">Manage</Button>
+                    </div>
+                    <div className="border border-soul-cream rounded-lg p-4 flex flex-col items-center">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Google_Analytics_Logo.png" alt="Google Analytics" className="h-8 mb-2" />
+                      <div className="font-medium mb-1">Google Analytics</div>
+                      <div className="text-xs text-soul-stone/60 mb-2">Connected</div>
+                      <Button size="sm" variant="outline" className="border-soul-cream">Manage</Button>
+                    </div>
+                    <div className="border border-soul-cream rounded-lg p-4 flex flex-col items-center">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Mailchimp_Logo.png" alt="Mailchimp" className="h-8 mb-2" />
+                      <div className="font-medium mb-1">Mailchimp</div>
+                      <div className="text-xs text-soul-stone/60 mb-2">Not Connected</div>
+                      <Button size="sm" className="bg-soul-blue text-white">Connect</Button>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
