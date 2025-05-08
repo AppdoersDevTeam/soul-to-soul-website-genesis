@@ -2,9 +2,10 @@ import PageLayout from "@/components/layout/PageLayout";
 import Section from "@/components/ui/Section";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const navigate = useNavigate();
   return (
     <PageLayout>
       <Section bgColor="cream">
@@ -28,7 +29,7 @@ const SignIn = () => {
               <Link to="#" className="text-soul-blue hover:underline text-sm">Forgot password?</Link>
             </div>
             <Button type="submit" className="w-full bg-soul-blue hover:bg-soul-blue-accent text-white">Sign In</Button>
-            <Button type="button" className="w-full bg-soul-gold hover:bg-soul-gold-accent text-white">Demo Login</Button>
+            <Button type="button" className="w-full bg-soul-gold hover:bg-soul-gold-accent text-white" onClick={() => navigate("/admin")}>Demo Login</Button>
           </form>
         </motion.div>
       </Section>
