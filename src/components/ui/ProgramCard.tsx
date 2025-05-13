@@ -9,7 +9,6 @@ interface ProgramCardProps {
   imageUrl?: string;
   comingSoon?: boolean;
   className?: string;
-  onLearnMore?: () => void;
 }
 
 const ProgramCard = ({
@@ -19,8 +18,10 @@ const ProgramCard = ({
   imageUrl,
   comingSoon = false,
   className,
-  onLearnMore,
 }: ProgramCardProps) => {
+  // Convert title to URL-friendly slug
+  const slug = title.toLowerCase().replace(/\s+/g, '-');
+
   return (
     <div className={cn("overflow-hidden rounded-lg border border-soul-cream bg-white shadow-md transition-all hover:shadow-lg", className)}>
       {imageUrl && (
@@ -56,17 +57,11 @@ const ProgramCard = ({
             Coming Soon
           </div>
         ) : (
-          onLearnMore ? (
-            <Button className="bg-soul-blue hover:bg-soul-blue-accent text-white" onClick={onLearnMore}>
+          <Link to={`/programs/${slug}`}>
+            <Button className="bg-soul-blue hover:bg-soul-blue-accent text-white">
               Learn More
             </Button>
-          ) : (
-            <Link to="/contact">
-              <Button className="bg-soul-blue hover:bg-soul-blue-accent text-white">
-                Learn More
-              </Button>
-            </Link>
-          )
+          </Link>
         )}
       </div>
     </div>

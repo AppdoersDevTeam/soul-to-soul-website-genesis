@@ -6,20 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import AppdoersCTA from "@/components/layout/AppdoersCTA";
 import { motion } from "framer-motion";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { useState } from "react";
 
 const Programs = () => {
-  // Modal state
-  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
-  const [selectedProgram, setSelectedProgram] = useState<string | null>(null);
-
-  // Handler for Learn More
-  const handleLearnMore = (programTitle: string) => {
-    setSelectedProgram(programTitle);
-    setShowUpgradeModal(true);
-  };
-
   return (
     <PageLayout>
       <Hero
@@ -37,7 +25,7 @@ const Programs = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +42,6 @@ const Programs = () => {
                 "Flexible scheduling options",
                 "In-person or virtual sessions"
               ]}
-              onLearnMore={() => handleLearnMore("Individual Coaching")}
             />
           </motion.div>
           
@@ -74,7 +61,6 @@ const Programs = () => {
                 "Community connection",
                 "Shared wisdom and insights"
               ]}
-              onLearnMore={() => handleLearnMore("Group Workshops")}
             />
           </motion.div>
           
@@ -94,7 +80,6 @@ const Programs = () => {
                 "Nourishing meals included",
                 "Small, intimate groups"
               ]}
-              onLearnMore={() => handleLearnMore("Seasonal Retreats")}
             />
           </motion.div>
           
@@ -114,7 +99,6 @@ const Programs = () => {
                 "Stress reduction techniques",
                 "Integration into daily routines"
               ]}
-              onLearnMore={() => handleLearnMore("Mindfulness Training")}
             />
           </motion.div>
           
@@ -134,7 +118,6 @@ const Programs = () => {
                 "Identity exploration",
                 "New chapter visioning"
               ]}
-              onLearnMore={() => handleLearnMore("Life Transitions Support")}
             />
           </motion.div>
           
@@ -177,7 +160,7 @@ const Programs = () => {
             className="text-soul-stone/80 text-lg mb-6 animate-fade-in"
           >At Soul to Soul Integrative Coaching, we combine various evidence-based approaches with traditional wisdom practices. Our methodology draws from:</motion.p>
           
-          <div className="grid sm:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -287,50 +270,6 @@ const Programs = () => {
           </div>
         </motion.div>
       </Section>
-
-      {/* Intermediate Plan Modal */}
-      <Dialog open={showUpgradeModal} onOpenChange={setShowUpgradeModal}>
-        <DialogContent className="max-w-md mx-auto rounded-xl p-8 bg-white shadow-xl animate-fade-in">
-          <div className="space-y-4 text-center">
-            <h2 className="text-2xl font-bold text-soul-blue">Intermediate Plan Required</h2>
-            <div className="bg-soul-cream/60 rounded-lg p-4">
-              <p className="text-soul-stone/90 text-base mb-2">
-                Access to this program is only available to members on the <span className="font-semibold text-soul-gold">Intermediate Plan</span>.
-              </p>
-              {selectedProgram && (
-                <p className="text-soul-stone/80 text-sm mb-2">
-                  Program: <span className="font-semibold">{selectedProgram}</span>
-                </p>
-              )}
-              <p className="text-soul-stone/70 text-sm">
-                To upgrade your plan and unlock this program, please contact us:
-              </p>
-              <a
-                href="mailto:info@appdoers.com?subject=Upgrade%20to%20Intermediate%20Plan"
-                className="block mt-2 text-soul-blue underline font-medium"
-              >
-                info@appdoers.com
-              </a>
-            </div>
-            <div className="flex gap-4 justify-center mt-6">
-              <button
-                className="px-6 py-2 rounded-lg bg-soul-gold text-white font-semibold shadow hover:bg-soul-gold-accent transition"
-                onClick={() => {
-                  window.open('mailto:info@appdoers.com?subject=Upgrade%20to%20Intermediate%20Plan', '_blank');
-                }}
-              >
-                Contact to Upgrade
-              </button>
-              <button
-                className="px-6 py-2 rounded-lg bg-soul-stone/10 text-soul-stone font-semibold hover:bg-soul-stone/20 transition"
-                onClick={() => setShowUpgradeModal(false)}
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
 
       <AppdoersCTA />
     </PageLayout>
